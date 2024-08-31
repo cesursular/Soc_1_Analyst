@@ -1,0 +1,20 @@
+
+# Access Controls Worksheet
+
+## Authorization/Authentication
+
+### Objective: Notes to Identify the Threat
+- The event took place on 10/03/23.
+- The user is listed as Legal/Administrator.
+- The IP address of the computer used to log in is 152.207.255.255.
+
+### Objective: Authorization Issues Identified
+- Robert Taylor Jr is not an admin.
+- His contract ended in 2019, but his account accessed payroll systems in 2023.
+
+### Objective: Recommendations to Prevent Future Incidents
+- User accounts should expire after 30 days of inactivity.
+- Contractors should have limited access to business resources.
+- Enable Multi-Factor Authentication (MFA) to secure account access.
+
+---
