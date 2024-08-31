@@ -1,0 +1,59 @@
+
+# Stakeholder Memorandum Exemplar
+
+**TO**: IT Manager, Stakeholders  
+**FROM**: (Your Name)  
+**DATE**: (Today’s Date)  
+**SUBJECT**: Internal IT Audit Findings and Recommendations  
+
+Dear Colleagues,
+
+Please review the following information regarding the Botium Toys internal audit scope, goals, critical findings, summary, and recommendations.
+
+## Scope:
+- The following systems are in scope: accounting, endpoint detection, firewalls, intrusion detection system, SIEM tool. The systems will be evaluated for:
+  - Current user permissions
+  - Current implemented controls
+  - Current procedures and protocols
+- Ensure current user permissions, controls, procedures, and protocols align with PCI DSS and GDPR compliance requirements.
+- Ensure current technology is accounted for both hardware and system access.
+
+## Goals:
+- Adhere to the NIST CSF.
+- Establish better processes to ensure systems are compliant.
+- Fortify system controls.
+- Adapt to the concept of least permissions in user credential management.
+- Establish policies and procedures, including playbooks.
+- Ensure compliance requirements are met.
+
+## Critical Findings (Must Be Addressed Immediately):
+- Multiple controls need development and implementation to meet audit goals, including:
+  - Control of Least Privilege and Separation of Duties
+  - Disaster recovery plans
+  - Password, access control, and account management policies, including a password management system
+  - Encryption (for secure website transactions)
+  - IDS
+  - Backups
+  - AV software
+  - CCTV
+  - Locks
+  - Manual monitoring, maintenance, and intervention for legacy systems
+  - Fire detection and prevention systems
+- Policies need to be developed and implemented to meet PCI DSS and GDPR compliance requirements.
+- Policies need to align with SOC1 and SOC2 guidance related to user access policies and overall data safety.
+
+## Findings (Should Be Addressed, But No Immediate Need):
+- The following controls should be implemented when possible:
+  - Time-controlled safe
+  - Adequate lighting
+  - Locking cabinets
+  - Signage indicating alarm service provider
+
+## Summary/Recommendations:
+It is recommended that critical findings relating to compliance with PCI DSS and GDPR be promptly addressed since Botium Toys accepts online payments from customers worldwide, including the E.U. Additionally, since one of the audit goals is to adapt to the concept of least permissions, SOC1 and SOC2 guidance related to user access policies and overall data safety should be used to develop appropriate policies and procedures.
+
+Having disaster recovery plans and backups is also critical because they support business continuity in the event of an incident. Integrating an IDS and AV software into the current systems will support our ability to identify and mitigate potential risks, aiding in intrusion detection, as existing legacy systems require manual monitoring and intervention. To further secure assets housed at Botium Toys’ single physical location, locks and CCTV should be used to secure physical assets (including equipment) and monitor and investigate potential threats.
+
+While not necessary immediately, using encryption, having a time-controlled safe, adequate lighting, locking cabinets, fire detection and prevention systems, and signage indicating alarm service provider will further improve Botium Toys’ security posture.
+
+---
