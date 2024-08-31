@@ -1,0 +1,33 @@
+
+# Brute Force Attacks and OS Hardening
+
+## Overview
+Brute force attacks are trial-and-error attempts to discover private information, such as passwords. Attackers can use tools to automate these attacks, making them more efficient than manual attempts. Implementing OS hardening measures and robust authentication can help mitigate the risks of these attacks.
+
+## Types of Brute Force Attacks
+- **Simple Brute Force Attacks**: Attackers guess login credentials by trying any possible combination until they find one that works.
+- **Dictionary Attacks**: Attackers use a list of commonly used passwords or stolen credentials to guess login information.
+
+## Assessing Vulnerabilities with VMs and Sandboxes
+### Virtual Machines (VMs)
+- VMs are software versions of physical computers, providing isolated environments for running code securely.
+- They can be used to test suspicious files, evaluate malware, and simulate attacks without affecting the host system.
+- VMs can revert to previous states but carry a small risk of malware escaping into the host machine.
+
+### Sandbox Environments
+- Sandboxes are isolated environments used for executing software or programs separate from the main network.
+- They help in testing patches, identifying bugs, and detecting vulnerabilities in a controlled setting.
+- Sandboxes can be physical or virtual, though some malware can detect and evade these environments.
+
+## Prevention Measures for Brute Force Attacks
+1. **Salting and Hashing**: Enhances security by converting passwords into unique, irreversible hash values. Salting adds random characters to the hashed passwords, increasing complexity.
+2. **Multi-Factor Authentication (MFA) and Two-Factor Authentication (2FA)**: MFA requires two or more verification methods, while 2FA uses two. Methods can include passwords, biometrics, or OTPs.
+3. **CAPTCHA and reCAPTCHA**: These tests differentiate humans from bots, preventing automated brute force attempts.
+4. **Password Policies**: Enforce strong password practices, regular updates, and login attempt limits to enhance security.
+
+## Key Takeaways
+- Brute force attacks exploit weak authentication by guessing passwords manually or using automated tools.
+- Security measures like sandboxes and VMs help identify and mitigate vulnerabilities before an incident occurs.
+- Prevention techniques such as salting, MFA, and CAPTCHA enhance security and reduce the risk of successful brute force attacks.
+
+---
