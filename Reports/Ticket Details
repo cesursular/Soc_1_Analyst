@@ -1,0 +1,43 @@
+
+# Ticket Details
+
+## Ticket ID: A-2703
+- **Alert Message**: SERVER-MAIL Phishing attempt possible download of malware
+- **Severity**: Medium
+- **Details**: The user may have opened a malicious email and opened attachments or clicked links.
+- **Ticket Status**: Open
+
+## Ticket Comments
+*Insert your comments here.*
+
+## Additional Information
+- **Known Malicious File Hash**: 54e6ea47eb04634d3e87fd7787e2136cccc80ade34f246a12cf93bab527f6b
+
+### Email Details:
+- **From**: Def Communications <76tguyhh6tgrt7tg.su> <114.114.114.114>
+- **Sent**: Wednesday, July 20, 2022 09:30:14 AM
+- **To**: <hr@inergy.com> <176.157.125.93>
+- **Subject**: Re: Infrastructure Engineer role
+
+### Email Body:
+```
+Dear HR at Inergy,
+
+I am writing to express my interest in the engineer role posted on the website. 
+Attached are my resume and cover letter. For privacy, the file is password protected. 
+Use the password paradise10789 to open.
+
+Thank you,
+Clyde West
+```
+
+### Attachment:
+- **Filename**: bfsvc.exe
+
+## Analysis and Recommendations:
+- The email contains a known malicious file attachment named "bfsvc.exe" disguised as a resume and cover letter.
+- The sender's email and IP address are suspicious and do not align with legitimate sources.
+- Immediate action should be taken to block the sender's IP and hash the identified malicious file in the organization's antivirus and firewall rules.
+- Advise users not to open or interact with unexpected attachments, especially executable files (.exe).
+
+---
