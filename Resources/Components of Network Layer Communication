@@ -1,0 +1,36 @@
+
+# Components of Network Layer Communication
+
+## Overview of the Network Layer (Layer 3 of the OSI Model)
+The network layer organizes the addressing and delivery of data packets across networks, directing packets from one router to another based on the destination's IP address. This address is stored in routing tables along the packet’s path.
+
+## IPv4 Packet Structure
+An IPv4 packet consists of two main sections: the header and the data.
+- **Header**: Ranges from 20 to 60 bytes and includes routing information.
+- **Data**: Contains the message being transmitted, with a maximum size of 65,536 bytes.
+
+### Key Fields in the IPv4 Header:
+1. **Version**: Identifies the protocol version (e.g., IPv4).
+2. **IP Header Length (HLEN)**: Indicates where the header ends and data begins.
+3. **Type of Service (ToS)**: Helps routers prioritize packet delivery.
+4. **Total Length**: The size of the entire IP packet, including header and data.
+5. **Identification**: Unique identifier for packet fragments.
+6. **Flags**: Provides information about packet fragmentation.
+7. **Fragmentation Offset**: Indicates the fragment’s position in the original packet.
+8. **Time to Live (TTL)**: Prevents packets from looping indefinitely.
+9. **Protocol**: Specifies the protocol used for the data.
+10. **Header Checksum**: Detects corruption in the header.
+11. **Source IP Address**: The sender's IPv4 address.
+12. **Destination IP Address**: The receiver's IPv4 address.
+13. **Options**: Allows additional security features.
+
+## Differences Between IPv4 and IPv6
+- **Address Length**: IPv4 uses 4-byte numeric addresses, while IPv6 uses 16-byte hexadecimal addresses.
+- **Address Space**: IPv4 allows 4.3 billion addresses, whereas IPv6 supports 340 undecillion addresses.
+- **Header Simplicity**: IPv6 headers are simpler and introduce fields like Flow Label and Traffic Class.
+- **Routing Efficiency**: IPv6 offers more efficient routing and avoids private address collisions.
+
+## Security Implications
+Packet capturing tools (PCAP) allow security analysts to inspect packets in transit. By analyzing packet fields, security analysts can determine the packet's origin, destination, and protocol, enabling critical security decisions.
+
+---
