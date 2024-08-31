@@ -1,0 +1,37 @@
+
+# Controls Assessment Exemplar
+
+## Current Assets Managed by IT
+- On-premises equipment for office business needs.
+- Employee equipment: desktops, laptops, smartphones, remote workstations, headsets, cables, keyboards, mice, docking stations, surveillance cameras, etc.
+- Management of systems, software, and services: accounting, telecommunication, database, security, e-commerce, and inventory management.
+- Internet access, internal network, vendor access management, data center hosting services, data retention and storage, badge readers.
+- Legacy systems maintenance requiring human monitoring.
+
+## Administrative Controls
+- **Least Privilege**: Preventative; ensures vendors and non-authorized staff have access only to the data necessary for their roles. **Priority: High**
+- **Disaster Recovery Plans**: Corrective; ensures business continuity with minimal downtime in the event of incidents affecting systems, hardware, connectivity, and data. **Priority: High**
+- **Password Policies**: Preventative; enforces strong password rules to reduce account compromises. **Priority: High**
+- **Access Control Policies**: Preventative; enhances data confidentiality and integrity. **Priority: High**
+- **Account Management Policies**: Preventative; reduces attack surface, especially concerning former employees. **Priority: High/Medium**
+- **Separation of Duties**: Preventative; limits individual access to prevent system abuse. **Priority: High**
+
+## Technical Controls
+- **Firewall**: Preventative; filters unwanted or malicious traffic from entering the network. **Priority: N/A**
+- **Intrusion Detection System (IDS)**: Detective; identifies possible intrusions quickly. **Priority: High**
+- **Encryption**: Deterrent; secures confidential data (e.g., payment transactions). **Priority: High/Medium**
+- **Backups**: Corrective; aligns with disaster recovery, ensuring ongoing productivity. **Priority: High**
+- **Password Management System**: Corrective; handles password recovery and lockouts. **Priority: High/Medium**
+- **Antivirus Software**: Corrective; detects and quarantines known threats. **Priority: High**
+- **Manual Monitoring, Maintenance, and Intervention**: Preventative/Corrective; required for legacy systems. **Priority: High**
+
+## Physical Controls
+- **Time-Controlled Safe**: Deterrent; reduces the impact of physical threats. **Priority: Medium/Low**
+- **Adequate Lighting**: Deterrent; limits hiding places to deter threats. **Priority: Medium/Low**
+- **CCTV Surveillance**: Preventative/Detective; used for both risk reduction and post-event investigation. **Priority: High/Medium**
+- **Locking Cabinets for Network Gear**: Preventative; protects network infrastructure from unauthorized access. **Priority: Medium**
+- **Signage Indicating Alarm Service Provider**: Deterrent; lowers the perceived likelihood of a successful attack. **Priority: Low**
+- **Locks**: Preventative; secures physical and digital assets. **Priority: High**
+- **Fire Detection and Prevention**: Detective/Preventative; protects against fire-related damage. **Priority: Medium/Low**
+
+---
