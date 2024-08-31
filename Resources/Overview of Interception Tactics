@@ -1,0 +1,28 @@
+
+# Overview of Interception Tactics
+
+## Introduction
+This document provides an overview of interception attacks, focusing on packet sniffing and IP spoofing. These attacks are categorized as interception attacks because they capture data packets as they travel across the network. This document also highlights how security analysts can counter these threats.
+
+## Packet Sniffing
+Packet sniffing involves capturing and inspecting data packets on a network. A Network Interface Card (NIC) in promiscuous mode can accept all network traffic, even those packets not addressed to the device. Malicious actors use tools like Wireshark to capture data on private networks, which can later be used for attacks, including IP spoofing.
+
+## IP Spoofing
+IP spoofing occurs when attackers use sniffed packets to impersonate authorized devices by mimicking their IP and MAC addresses. This allows them to intercept communications and potentially gain unauthorized access to sensitive data.
+
+## Types of IP Spoofing Attacks
+
+### On-Path Attack (Meddler-in-the-Middle)
+An on-path attack intercepts communications between two trusted devices. The attacker collects valuable data, such as usernames and passwords, or manipulates DNS lookups to redirect traffic to malicious sites. To protect against on-path attacks, encrypting data in transit, such as using TLS, is crucial.
+
+### Smurf Attack
+A smurf attack floods an authorized IP address with spoofed packets, often utilizing a denial-of-service (DoS) technique. The spoofed packet is sent to a broadcast address, reaching all devices on the network, and can overwhelm the system. Advanced firewalls with network anomaly detection can help prevent such attacks.
+
+### Denial of Service (DoS) Attack
+In a DoS attack, an attacker impersonates an authorized user to send repeated IP packets with fake addresses, ultimately crashing the network server. Defense strategies include using multiple layers of security, such as encryption, to counteract these attacks.
+
+## Key Takeaways
+- Packet sniffing and IP spoofing are common interception tactics used by attackers to manipulate network traffic.
+- Mitigation strategies like encryption, advanced firewalls, and defense-in-depth approaches are essential to limit the risks associated with these attacks.
+
+---
