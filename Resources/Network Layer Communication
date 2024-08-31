@@ -1,0 +1,35 @@
+
+# Components of Network Layer Communication
+
+## Overview of the Network Layer (Layer 3 of the OSI Model)
+The network layer manages the addressing and delivery of data packets across the network and the internet. It directs packets from one router to another based on the destination IP address found in the packet header. Routers use routing tables to store destination addresses for efficient data transmission.
+
+## Format of an IPv4 Packet
+An IPv4 packet consists of two main sections: the header and the data.
+- **Header**: The header size ranges from 20 to 60 bytes, containing IP routing information such as the source and destination IP addresses, header length, and total packet length.
+- **Data**: This section contains the message being transmitted, with a maximum possible size of 65,535 bytes.
+
+### Key Fields in the IPv4 Header:
+1. **Version (VER)**: Indicates the protocol version used (e.g., IPv4).
+2. **IP Header Length (HLEN or IHL)**: Specifies where the header ends and the data begins.
+3. **Type of Service (ToS)**: Provides information to routers for prioritizing packet delivery.
+4. **Total Length**: Indicates the total size of the packet, including both the header and data.
+5. **Identification**: Assigns a unique identifier to each fragment of a packet for reassembly.
+6. **Flags**: Provides details about packet fragmentation.
+7. **Fragmentation Offset**: Indicates where a fragment belongs within the original packet.
+8. **Time to Live (TTL)**: Limits the lifespan of a packet by decrementing its counter at each router hop.
+9. **Protocol**: Specifies the protocol used for the data portion of the packet.
+10. **Header Checksum**: Detects any corruption of the IP header during transit.
+11. **Source IP Address**: The IP address of the sending device.
+12. **Destination IP Address**: The IP address of the receiving device.
+13. **Options**: Allows additional security options to be applied if needed.
+
+## Differences Between IPv4 and IPv6
+- **Address Length**: IPv4 uses 4 decimal numbers, while IPv6 uses 8 hexadecimal numbers, allowing for a vastly larger address space.
+- **Header Simplicity**: IPv6 headers are simpler, lacking fields such as IHL, Identification, and Flags found in IPv4.
+- **Security Enhancements**: IPv6 eliminates private address collisions and offers more efficient routing.
+
+## Key Takeaways
+Analyzing IP data packet fields helps determine critical security information, such as the packet's source, destination, and protocol used. Understanding these details allows for informed security decisions during packet inspection.
+
+---
