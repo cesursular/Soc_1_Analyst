@@ -1,0 +1,22 @@
+Security Risk Assessment Report
+Part 1: Selected Hardening Tools and Methods
+
+    Multifactor Authentication (MFA): Implementing multiple layers in authentication to prevent unauthorized access.
+    Firewall Maintenance and Port Filtering: Filtering traffic and regularly updating security configurations to protect the network.
+    Patch Updates: Applying the latest patches to fix security vulnerabilities in systems and applications.
+
+Part 2: Recommendations and Explanations
+1. Multifactor Authentication (MFA)
+
+    Why Effective: MFA significantly reduces unauthorized access by adding multiple factors to the authentication process. It provides an extra layer of security even when passwords are accidentally shared or compromised.
+    Frequency of Implementation: Initial setup followed by regular maintenance checks.
+
+2. Firewall Maintenance and Port Filtering
+
+    Why Effective: Firewall maintenance and port filtering block potential attackers from accessing the network and filter out dangerous traffic from specific ports, reducing the risk of unauthorized entry and malware infiltration.
+    Frequency of Implementation: These configurations need regular reviews and updates, typically weekly or monthly, to maintain effectiveness.
+
+3. Patch Updates
+
+    Why Effective: Applying current patches addresses known vulnerabilities, preventing attackers from exploiting weaknesses in the system.
+    Frequency of Implementation: Security patches should be applied as soon as they are released to ensure systems are protected from newly discovered threats.
