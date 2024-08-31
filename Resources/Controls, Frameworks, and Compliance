@@ -1,0 +1,26 @@
+
+# Controls, Frameworks, and Compliance
+
+## Overview
+Security frameworks provide a structured approach to implementing a security lifecycle, which consists of a constantly evolving set of policies and standards. Security frameworks, controls, and compliance regulations work together to manage security and ensure that all stakeholders contribute to minimizing risk.
+
+## How Controls, Frameworks, and Compliance Are Related
+The Confidentiality, Integrity, and Availability (CIA) triad is a model that guides organizations in managing risk when developing systems and security policies.
+
+- **Confidentiality**: Ensures that information is not disclosed to unauthorized individuals or systems.
+- **Integrity**: Guarantees that data is accurate and unaltered by unauthorized users.
+- **Availability**: Ensures that information and resources are available to authorized users when needed.
+
+These principles inform the establishment of security controls, which are safeguards designed to mitigate threats, risks, and vulnerabilities. Controls are used in conjunction with security frameworks to ensure that security objectives are met and compliance with regulations is maintained.
+
+## Security Lifecycle
+A security lifecycle includes:
+- **Policy Development**: Establishing policies that define security goals and responsibilities.
+- **Implementation**: Deploying security controls and procedures to meet the defined policies.
+- **Monitoring**: Continuously assessing the effectiveness of controls and adapting to emerging threats.
+- **Compliance**: Ensuring that the organization adheres to relevant laws, regulations, and standards.
+
+## Importance of Compliance
+Compliance regulations enforce the implementation of security standards and best practices within organizations. Adhering to these regulations not only helps in mitigating risks but also prevents legal penalties and enhances the organization's reputation.
+
+---
