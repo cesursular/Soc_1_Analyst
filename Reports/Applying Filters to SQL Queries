@@ -1,0 +1,84 @@
+
+# Applying Filters to SQL Queries
+
+## Project Description
+As part of my role, I ensure the security of our organization’s system by investigating potential security issues and updating employee computers as needed. Below are examples of how I used SQL with filters to perform security-related tasks.
+
+## SQL Queries with Filters
+
+### 1. Retrieve After-Hours Failed Login Attempts
+A potential security incident occurred after business hours (after 1800). Failed login attempts occurring after hours need investigation.
+
+**SQL Query:**
+```sql
+SELECT * FROM log_in_attempts
+WHERE login_time > '18:00' AND success = FALSE;
+```
+
+**Explanation:**
+This query filters for failed login attempts that occurred after 1800. It selects all data from the `log_in_attempts` table, then uses a `WHERE` clause with an `AND` operator to filter results to those occurring after 1800 (`login_time > '18:00'`) and were unsuccessful (`success = FALSE`).
+
+### 2. Retrieve Login Attempts on Specific Dates
+Suspicious events occurred on 2022-05-09 and the previous day. These login activities need investigation.
+
+**SQL Query:**
+```sql
+SELECT * FROM log_in_attempts
+WHERE login_date = '2022-05-09' OR login_date = '2022-05-08';
+```
+
+**Explanation:**
+This query returns all login attempts from 2022-05-09 or 2022-05-08 by selecting data from `log_in_attempts` and using a `WHERE` clause with an `OR` operator.
+
+### 3. Retrieve Login Attempts Outside of Mexico
+Investigation revealed potential issues with login attempts occurring outside of Mexico.
+
+**SQL Query:**
+```sql
+SELECT * FROM log_in_attempts
+WHERE country NOT LIKE 'MEX%';
+```
+
+**Explanation:**
+This query filters for login attempts from countries other than Mexico by using `NOT LIKE 'MEX%'` to match all variations representing Mexico.
+
+### 4. Retrieve Employees in Marketing
+The Marketing department in the East building requires computer updates.
+
+**SQL Query:**
+```sql
+SELECT * FROM employees
+WHERE department = 'Marketing' AND office LIKE 'East%';
+```
+
+**Explanation:**
+This query filters employees working in the Marketing department and located in the East building using `LIKE 'East%'` to match specific office numbers.
+
+### 5. Retrieve Employees in Finance or Sales
+Employees in Finance and Sales departments need different security updates.
+
+**SQL Query:**
+```sql
+SELECT * FROM employees
+WHERE department = 'Finance' OR department = 'Sales';
+```
+
+**Explanation:**
+This query filters employees from Finance or Sales departments using the `OR` operator.
+
+### 6. Retrieve All Employees Not in IT
+Security updates are needed for employees not in the Information Technology department.
+
+**SQL Query:**
+```sql
+SELECT * FROM employees
+WHERE department != 'Information Technology';
+```
+
+**Explanation:**
+This query filters for employees not in the IT department using the `!=` operator.
+
+## Summary
+I applied filters to SQL queries using the `AND`, `OR`, and `NOT` operators along with the `LIKE` operator and the `%` wildcard to retrieve specific data from the `log_in_attempts` and `employees` tables for targeted security investigations.
+
+---
