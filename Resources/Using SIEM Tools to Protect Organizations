@@ -1,0 +1,30 @@
+
+# Using SIEM Tools to Protect Organizations
+
+## Overview
+Security Information and Event Management (SIEM) tools help cybersecurity professionals identify and respond to potential threats, risks, and vulnerabilities by analyzing log data. SIEM tools like Splunk and Chronicle offer dashboards that provide insights into an organization’s security posture, helping analysts manage and secure internal infrastructure.
+
+## Splunk Dashboards
+Splunk provides two main SIEM options: Splunk® Enterprise and Splunk® Cloud. Both tools collect, monitor, and analyze log data from various sources, allowing security professionals to gain visibility into an organization's operations.
+
+### Key Splunk Dashboards:
+- **Security Posture Dashboard**: Displays notable security events from the last 24 hours. Helps SOCs monitor real-time threats and assess security infrastructure performance.
+- **Executive Summary Dashboard**: Provides a high-level analysis of security incidents and trends. Useful for reporting to stakeholders and improving security measures.
+- **Incident Review Dashboard**: Identifies suspicious patterns and highlights high-risk items. Includes a visual timeline of events leading to an incident.
+- **Risk Analysis Dashboard**: Tracks risk-related activities, such as unusual logins or high network traffic. Helps prioritize risk mitigation efforts.
+
+## Chronicle Dashboards
+Chronicle, a cloud-native SIEM tool from Google, retains and analyzes log data to identify security threats. It provides insights based on specific assets, domain names, users, and IP addresses.
+
+### Key Chronicle Dashboards:
+- **Enterprise Insights Dashboard**: Highlights recent alerts and suspicious domain names (IOCs). Provides a confidence score and severity level for each threat.
+- **Data Ingestion and Health Dashboard**: Monitors event logs, log sources, and data processing success rates to ensure accurate data ingestion.
+- **IOC Matches Dashboard**: Displays top threats and trends in domain names, IP addresses, and devices. Directs focus to high-priority threats.
+- **Main Dashboard**: Summarizes data ingestion, alerting, and event activity. Useful for identifying threat trends across various sources.
+- **Rule Detections Dashboard**: Lists incidents with the highest occurrences and severities. Helps manage recurring incidents and develop mitigation strategies.
+- **User Sign-In Overview Dashboard**: Provides insights into user access behavior, highlighting unusual activities such as simultaneous logins from different locations.
+
+## Key Takeaways
+SIEM tools like Splunk and Chronicle are essential for organizing and prioritizing security efforts. Dashboards provide critical insights that allow analysts to reduce risk by identifying, analyzing, and addressing high-priority threats in a timely manner.
+
+---
