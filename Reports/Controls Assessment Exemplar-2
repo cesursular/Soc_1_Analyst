@@ -1,0 +1,44 @@
+
+# Controls Assessment Exemplar
+
+## Current Assets Managed by IT
+The IT Department manages the following assets:
+- On-premises equipment for office business needs.
+- Employee equipment: desktops, laptops, smartphones, remote workstations, headsets, cables, keyboards, mice, docking stations, surveillance cameras, etc.
+- Management of systems, software, and services: accounting, telecommunication, database, security, e-commerce, and inventory management.
+- Internet access, internal network, vendor access management, data center hosting services, data retention and storage, badge readers.
+- Legacy systems maintenance requiring human monitoring.
+
+## Administrative Controls
+| Control Name             | Control Type & Explanation                                                                                  | Needs Implementation | Priority |
+|--------------------------|-------------------------------------------------------------------------------------------------------------|----------------------|----------|
+| Least Privilege          | Preventative; reduces risk by ensuring vendors and unauthorized staff only access necessary assets/data.    | X                    | High     |
+| Disaster Recovery Plans  | Corrective; ensures business continuity with minimal downtime in the event of incidents.                    | X                    | High     |
+| Password Policies        | Preventative; enforces strong password rules to reduce account compromises.                                 | X                    | High     |
+| Access Control Policies  | Preventative; enhances confidentiality and integrity of data.                                               | X                    | High     |
+| Account Management       | Preventative; reduces attack surface, limits impact from former employees.                                  | X                    | High/Medium |
+| Separation of Duties     | Preventative; ensures no one has excessive access to abuse the system.                                      | X                    | High     |
+
+## Technical Controls
+| Control Name                | Control Type & Explanation                                                                       | Needs Implementation | Priority   |
+|-----------------------------|--------------------------------------------------------------------------------------------------|----------------------|------------|
+| Firewall                    | Preventative; filters unwanted/malicious traffic. Already in place.                             | NA                   | NA         |
+| Intrusion Detection System  | Detective; identifies potential intrusions quickly.                                             | X                    | High       |
+| Encryption                  | Deterrent; secures confidential data (e.g., payment transactions).                              | X                    | High/Medium|
+| Backups                     | Corrective; supports productivity recovery in the event of disruptions.                         | X                    | High       |
+| Password Management System  | Corrective; manages password recovery and resets.                                               | X                    | High/Medium|
+| Antivirus Software          | Corrective; detects and quarantines known threats.                                              | X                    | High       |
+| Manual Monitoring           | Preventative/Corrective; necessary for legacy systems to manage threats and vulnerabilities.    | X                    | High       |
+
+## Physical Controls
+| Control Name                    | Control Type & Explanation                                                                           | Needs Implementation | Priority      |
+|---------------------------------|------------------------------------------------------------------------------------------------------|----------------------|---------------|
+| Time-Controlled Safe            | Deterrent; reduces the impact of physical threats.                                                   | X                    | Medium/Low    |
+| Adequate Lighting               | Deterrent; limits hiding places to deter threats.                                                    | X                    | Medium/Low    |
+| CCTV Surveillance               | Preventative/Detective; reduces risk of certain events and supports post-event investigations.       | X                    | High/Medium   |
+| Locking Cabinets for Network Gear | Preventative; prevents unauthorized physical access to network infrastructure.                     | X                    | Medium        |
+| Signage Indicating Alarm Provider| Deterrent; decreases perceived success likelihood of attacks.                                       | X                    | Low           |
+| Locks                           | Preventative; secures physical and digital assets.                                                   | X                    | High          |
+| Fire Detection & Prevention     | Detective/Preventative; detects and prevents fire damage to inventory, servers, etc.                | X                    | Medium/Low    |
+
+---
