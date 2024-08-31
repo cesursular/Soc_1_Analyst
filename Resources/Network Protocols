@@ -1,0 +1,57 @@
+
+# Additional Network Protocols
+
+## Overview
+Network protocols are divided into three categories: communication, management, and security protocols. These protocols organize data transmission across networks and are essential for cybersecurity professionals. Below are additional protocols commonly used in the field, along with their respective port numbers.
+
+## Key Network Protocols
+
+### 1. Network Address Translation (NAT)
+NAT allows devices with private IP addresses to communicate with the public internet by translating private IPs to a public IP assigned by a router or firewall. NAT operates at the Internet and Transport layers of the TCP/IP model.
+
+- **Private IP Ranges**: 
+  - 10.0.0.0 - 10.255.255.255
+  - 172.16.0.0 - 172.31.255.255
+  - 192.168.0.0 - 192.168.255.255
+  
+- **Public IP Ranges**:
+  - 1.0.0.0 - 9.255.255.255
+  - 11.0.0.0 - 126.255.255.255
+  - 128.0.0.0 - 172.15.255.255
+
+### 2. Dynamic Host Configuration Protocol (DHCP)
+DHCP assigns unique IP addresses and configuration details to devices on a network. It operates on UDP port 67 (servers) and UDP port 68 (clients).
+
+### 3. Address Resolution Protocol (ARP)
+ARP translates IP addresses into MAC addresses, allowing devices to communicate on a network. ARP operates at the Internet layer of the TCP/IP model and does not have a specific port number.
+
+### 4. Telnet
+Telnet allows devices to communicate with each other using command line prompts. It operates on TCP port 23 but is not secure as it transmits data in clear text.
+
+### 5. Secure Shell (SSH)
+SSH creates secure connections with remote systems, offering encrypted communication and secure authentication. It operates on TCP port 22 and replaces insecure protocols like Telnet.
+
+### 6. Post Office Protocol (POP3)
+POP3 manages and retrieves emails from a mail server. It operates on TCP/UDP port 110 for unencrypted emails and TCP/UDP port 995 for encrypted emails (SSL/TLS).
+
+### 7. Internet Message Access Protocol (IMAP)
+IMAP is used for accessing incoming emails. It allows emails to remain on the server, enabling access from multiple devices. It operates on TCP port 143 (unencrypted) and TCP port 993 (encrypted, TLS).
+
+### 8. Simple Mail Transfer Protocol (SMTP)
+SMTP transmits and routes emails from sender to recipient. It uses TCP/UDP port 25 for unencrypted emails and TCP/UDP port 587 for encrypted emails (TLS).
+
+## Protocols and Port Numbers Summary
+| Protocol | Port Number                   |
+|----------|-------------------------------|
+| DHCP     | UDP port 67 (servers), 68 (clients) |
+| ARP      | None                          |
+| Telnet   | TCP port 23                   |
+| SSH      | TCP port 22                   |
+| POP3     | TCP/UDP port 110, 995 (SSL/TLS) |
+| IMAP     | TCP port 143, 993 (SSL/TLS)   |
+| SMTP     | TCP/UDP port 25, 587 (TLS)    |
+
+## Key Takeaways
+Understanding network protocols and their associated ports is essential for cybersecurity professionals. These protocols facilitate communication, management, and security on networks, and are critical in day-to-day operations.
+
+---
