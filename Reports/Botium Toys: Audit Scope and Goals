@@ -1,0 +1,30 @@
+
+# Botium Toys: Audit Scope and Goals
+
+## Summary
+Perform an audit of Botium Toys’ cybersecurity program. The audit needs to align current business practices with industry standards and best practices. The goal is to provide mitigation recommendations for vulnerabilities classified as “high risk” and present an overall strategy for improving the security posture of the organization. The audit team will document their findings, provide remediation plans, and communicate with stakeholders.
+
+## Scope
+The scope of this audit includes the entire security program at Botium Toys. This involves assessing all assets alongside internal processes and procedures. The following systems will be assessed:
+- Current user permissions in accounting, endpoint detection, firewalls, intrusion detection systems, and Security Information and Event Management (SIEM) tool.
+- Current implemented controls within the aforementioned systems.
+- Current procedures and protocols for each system.
+- Ensuring alignment of permissions, controls, and protocols with compliance requirements.
+- Verification of all current technology, including hardware and system access.
+
+## Goals
+The main goals of Botium Toys’ internal IT audit are:
+- Adhere to the National Institute of Standards and Technology Cybersecurity Framework (NIST CSF).
+- Establish processes that ensure systems are compliant.
+- Fortify system controls.
+- Implement the principle of least privilege in user credential management.
+- Establish clear policies, procedures, and playbooks.
+- Ensure compliance requirements are met.
+
+## Expected Deliverables
+- A comprehensive report detailing the current security posture of the organization.
+- Recommendations for improving the security posture.
+- Justification for hiring additional cybersecurity personnel.
+
+## References
+For more information, refer to the National Institute of Standards and Technology Cybersecurity Framework (NIST CSF).
