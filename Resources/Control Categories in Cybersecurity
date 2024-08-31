@@ -1,0 +1,48 @@
+
+# Control Categories in Cybersecurity
+
+## Overview
+Controls in cybersecurity are grouped into three main categories: Administrative/Managerial, Technical, and Physical controls. Each category addresses different aspects of security and works together to protect assets and data.
+
+## Control Categories
+
+### 1. Administrative/Managerial Controls
+These controls address the human aspect of cybersecurity and include policies and procedures that define how an organization manages data and employee responsibilities. Examples include:
+- **Least Privilege**: Preventative; reduces risk from malicious insiders.
+- **Disaster Recovery Plans**: Corrective; ensures business continuity.
+- **Password Policies**: Preventative; reduces the likelihood of account compromise.
+- **Access Control Policies**: Preventative; defines data access rules.
+- **Account Management Policies**: Preventative; manages account lifecycle and reduces risk.
+- **Separation of Duties**: Preventative; limits the impact of compromised accounts.
+
+### 2. Technical Controls
+Technical controls involve solutions such as firewalls, IDS/IPS, antivirus software, and encryption. Examples include:
+- **Firewall**: Preventative; filters unwanted traffic.
+- **IDS/IPS**: Detective; identifies and prevents anomalous traffic.
+- **Encryption**: Deterrent; ensures confidentiality of sensitive data.
+- **Backups**: Corrective; restores data after an event.
+- **Password Management**: Preventative; reduces password fatigue.
+- **Antivirus (AV) Software**: Corrective; detects and quarantines threats.
+
+### 3. Physical Controls
+Physical controls limit access to physical assets. Examples include:
+- **Time-Controlled Safe**: Deterrent; reduces the impact of physical threats.
+- **Adequate Lighting**: Deterrent; limits hiding places for threats.
+- **CCTV**: Preventative/Detective; reduces event risk and informs post-event conditions.
+- **Locking Cabinets**: Preventative; prevents unauthorized access to network gear.
+- **Locks**: Deterrent/Preventative; secures physical assets from unauthorized access.
+- **Fire Detection and Prevention**: Detective/Preventative; detects and prevents damage from fires.
+
+## Control Types
+Control types describe how each control functions to protect assets and provide defense in depth:
+1. **Preventative Controls**: Designed to prevent incidents from occurring (e.g., firewalls, password policies).
+2. **Corrective Controls**: Used to restore assets after an incident (e.g., backups, disaster recovery plans).
+3. **Detective Controls**: Implemented to determine if an incident has occurred (e.g., IDS, CCTV).
+4. **Deterrent Controls**: Designed to discourage attacks (e.g., encryption, locks).
+
+## Key Takeaways
+- Controls are categorized as Administrative, Technical, and Physical.
+- Control types include Preventative, Corrective, Detective, and Deterrent.
+- A defense-in-depth approach ensures comprehensive security by using a combination of these controls.
+
+---
