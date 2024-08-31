@@ -1,0 +1,26 @@
+
+# Compliance Checklist Exemplar
+
+## Regulations Overview
+
+### 1. Federal Energy Regulatory Commission - North American Electric Reliability Corporation (FERC-NERC)
+- **Applicability**: This regulation applies to organizations involved with the U.S. and North American power grid. It requires organizations to prepare for, mitigate, and report any potential security incidents that could impact the power grid.
+- **Requirement**: Organizations must adhere to the Critical Infrastructure Protection Reliability Standards (CIP) defined by FERC.
+
+### 2. General Data Protection Regulation (GDPR)
+- **Applicability**: GDPR is a European Union regulation that protects the data privacy rights of E.U. citizens. It mandates that any breach involving an E.U. citizen's data must be reported within 72 hours.
+- **Explanation**: Botium Toys needs to comply with GDPR as they collect personal data globally, including from the E.U.
+
+### 3. Payment Card Industry Data Security Standard (PCI DSS)
+- **Applicability**: PCI DSS ensures that organizations securely store, process, and transmit credit card information.
+- **Explanation**: Botium Toys must comply with PCI DSS due to their handling of credit card data both in person and online.
+
+### 4. Health Insurance Portability and Accountability Act (HIPAA)
+- **Applicability**: A U.S. federal law protecting patient health information and mandating breach notification to patients.
+- **Explanation**: Not directly applicable to Botium Toys but crucial for organizations handling health data.
+
+### 5. System and Organization Controls (SOC type 1, SOC type 2)
+- **Applicability**: SOC reports assess an organization's user access policies, covering confidentiality, privacy, integrity, availability, and security.
+- **Explanation**: Botium Toys needs to establish and enforce user access controls to mitigate risks, particularly when involving third-party vendors.
+
+---
