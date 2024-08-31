@@ -1,0 +1,43 @@
+
+# Network Components, Devices, and Diagrams
+
+## Overview of Network Architecture
+Network architecture, also known as network design, involves setting up tools, devices, and protocols to observe and secure network traffic. Security analysts must understand how these elements work together to protect the network.
+
+## Key Network Devices
+
+### 1. Devices and Desktop Computers
+- Common devices include personal computers, laptops, mobile phones, and tablets.
+- Each device has a unique MAC address and IP address, allowing identification on the network.
+- Devices can connect via wired or wireless connections to send and receive data packets.
+
+### 2. Firewalls
+- Firewalls are security devices that monitor and restrict network traffic based on predefined security rules.
+- They often reside between a secured internal network and untrusted external resources like the internet.
+
+### 3. Servers
+- Servers provide services to devices called clients, operating under the client-server model.
+- Examples include DNS servers, file servers, and corporate mail servers.
+
+### 4. Hubs and Switches
+- **Hubs**: Provide a common connection point for devices but broadcast all information to all ports, making them vulnerable to eavesdropping.
+- **Switches**: Forward packets based on the MAC address table, enhancing security by directing traffic only to the intended device.
+
+### 5. Routers
+- Routers direct traffic between networks based on the IP address of the destination.
+- They can include firewall features to block or allow traffic based on transmission information.
+
+### 6. Modems and Wireless Access Points
+- **Modems**: Interface with ISPs to provide internet connectivity and translate signals into digital form.
+- **Wireless Access Points**: Use Wi-Fi protocols to create wireless networks and connect devices using radio waves.
+
+## Using Network Diagrams
+- Network diagrams are visual maps showing the devices on a network and their connections.
+- Security analysts use these diagrams to understand network architecture, design networks, and identify potential security issues.
+
+## Key Takeaways
+- The client-server model involves clients requesting services from servers, which then perform these requests.
+- Network devices include routers, switches, servers, hubs, and modems, each playing a role in maintaining network functionality.
+- Security analysts use network diagrams to visualize and manage network architecture.
+
+---
