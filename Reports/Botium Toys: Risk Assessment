@@ -1,0 +1,25 @@
+
+# Botium Toys: Risk Assessment
+
+## Current Assets
+The IT Department manages the following assets:
+- On-premises equipment for in-office business needs.
+- Employee equipment including end-user devices (desktops/laptops, smartphones), remote workstations, headsets, cables, keyboards, mice, docking stations, and surveillance cameras.
+- Management of systems, software, and services such as accounting, telecommunication, database, security, ecommerce, and inventory management.
+- Internet access, internal network, vendor access management.
+- Data center hosting services, data retention, and storage solutions.
+- Badge readers and legacy systems that require human monitoring due to end-of-life status.
+
+## Risk Description
+There is currently inadequate management of assets at Botium Toys. The company does not have the proper controls in place, and this lack of oversight may result in non-compliance with U.S. and international regulations and standards.
+
+## Control Best Practices
+According to the NIST Cybersecurity Framework (CSF), the first function is "Identify." Botium Toys must dedicate resources to manage assets effectively. This includes assessing the impact of losing existing assets and ensuring that asset loss does not disrupt business continuity.
+
+## Risk Score
+The risk score is assessed at 8 out of 10, which is relatively high. This score reflects the current lack of controls and adherence to necessary compliance regulations and standards.
+
+## Additional Comments
+The potential impact from the loss of an asset is rated as medium because the IT department is not fully aware of which assets would be affected. The likelihood of asset loss or fines from regulatory bodies is high due to the absence of essential controls and non-compliance with regulations regarding customer data privacy.
+
+---
