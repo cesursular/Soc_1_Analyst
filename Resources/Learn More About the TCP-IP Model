@@ -1,0 +1,39 @@
+
+# Learn More About the TCP/IP Model
+
+## Overview
+The Transmission Control Protocol/Internet Protocol (TCP/IP) model is a framework that visualizes how data is organized and transmitted across a network. It is used by network engineers and security analysts to conceptualize network processes and identify disruptions or security threats.
+
+## Layers of the TCP/IP Model
+The TCP/IP model consists of four layers: Network Access, Internet, Transport, and Application.
+
+### 1. Network Access Layer
+Also known as the Data Link layer, this layer organizes data frames within a single network. It includes physical hardware like hubs, modems, and cables. Protocols at this layer include the Address Resolution Protocol (ARP), which maps IP addresses to MAC addresses.
+
+### 2. Internet Layer
+Responsible for delivering data packets to the destination, which may be on a different network. Common protocols include:
+- **Internet Protocol (IP)**: Routes data packets between networks.
+- **Internet Control Message Protocol (ICMP)**: Provides error reporting and status updates about data packets.
+
+### 3. Transport Layer
+Handles the reliable delivery of data between systems. Key protocols are:
+- **Transmission Control Protocol (TCP)**: Ensures reliable transmission by establishing connections and retransmitting lost data.
+- **User Datagram Protocol (UDP)**: Used for performance-sensitive applications, such as video streaming, without guaranteeing delivery.
+
+### 4. Application Layer
+Combines the functions of the Application, Presentation, and Session layers of the OSI model. It handles network requests and responses. Common protocols include:
+- **HTTP**: Used for web browsing.
+- **SMTP**: Used for email.
+- **SSH**: Secure remote access.
+- **FTP**: File transfer.
+- **DNS**: Resolves domain names to IP addresses.
+
+## TCP/IP Model vs. OSI Model
+The OSI model consists of seven layers, while the TCP/IP model has four. Both models help visualize network processes and protocols for data transmission. The TCP/IP model simplifies the OSI model by combining multiple layers, making it more practical for real-world applications.
+
+## Key Takeaways
+- The TCP/IP and OSI models are essential for understanding how networks operate.
+- Security professionals use these models to identify where issues occur and to communicate effectively about network processes.
+- Understanding both models allows professionals to design better networks and enhance security measures.
+
+---
