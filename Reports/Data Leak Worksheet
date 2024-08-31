@@ -1,0 +1,48 @@
+
+# Data Leak Worksheet
+
+## Incident Summary
+A sales manager shared access to a folder of internal-only documents during a team meeting. The folder contained files associated with a new product, customer analytics, and promotional materials. After the meeting, the manager did not revoke access to the folder but warned the team to wait for approval before sharing promotional materials. 
+
+During a video call with a business partner, a sales representative mistakenly shared the link to the internal folder instead of the promotional materials. The business partner then posted the link on their company's social media page.
+
+## Control: Least Privilege
+
+### Issue(s)
+- Access to the internal folder was not limited to the sales team and the manager.
+- The business partner was given unintended access and shared the promotional information on social media.
+
+### Review
+**NIST SP 800-53: AC-6** addresses how organizations can protect data privacy by implementing least privilege and suggests control enhancements to improve its effectiveness.
+
+### Recommendation(s)
+- Restrict access to sensitive resources based on user role.
+- Regularly audit user privileges.
+
+### Justification
+Data leaks can be prevented if shared links to internal files are restricted to employees only. Regular audits by managers and security teams can help limit exposure of sensitive information.
+
+## Security Plan Snapshot
+The NIST Cybersecurity Framework (CSF) uses a hierarchical structure to organize security information. The structure starts with a broad function and narrows down to specific categories, subcategories, and security controls.
+
+| Function | Category           | Subcategory                   | Reference(s)              |
+|----------|--------------------|-------------------------------|---------------------------|
+| Protect  | PR.DS: Data Security | PR.DS-5: Protections against data leaks | NIST SP 800-53: AC-6 |
+
+**NIST SP 800-53: AC-6** defines the controls used to protect against data leaks and provides guidelines for securing information systems.
+
+## NIST SP 800-53: AC-6 Overview
+
+### Control: Least Privilege
+Only the minimal access and authorization required to complete a task or function should be provided to users.
+
+### Discussion
+Processes, user accounts, and roles should enforce necessary privileges to achieve least privilege, preventing users from operating at higher privilege levels than needed.
+
+### Control Enhancements
+- Restrict access to sensitive resources based on user role.
+- Automatically revoke access after a period of time.
+- Keep activity logs of provisioned user accounts.
+- Regularly audit user privileges.
+
+---
