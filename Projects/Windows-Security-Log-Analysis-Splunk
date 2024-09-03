@@ -1,0 +1,65 @@
+# Windows Security Log Analysis and Threat Detection with Splunk
+
+## Overview
+
+This project utilizes Splunk to monitor and analyze Windows Security logs, focusing on detecting potential security threats such as failed login attempts, privilege escalations, and unusual user behavior. The project provides comprehensive dashboards and alerts that offer real-time visibility into security events, enhancing the ability to respond to potential incidents promptly.
+
+## Features
+
+- **Log Ingestion**: Collects Windows Security Event Logs and parses critical information.
+- **Advanced Analytics**: Uses Splunk’s powerful search processing language (SPL) for in-depth log analysis.
+- **Custom Dashboards**: Visualizes data through interactive dashboards that highlight key security metrics.
+- **Scheduled Reports and Alerts**: Automatically generates reports and sends alerts based on predefined security rules.
+
+## Setup Instructions
+
+1. **Install Splunk**:
+   - Download and install Splunk Enterprise from [Splunk Official Site](https://www.splunk.com).
+   - Configure Splunk to start collecting Windows logs through the Data Inputs section.
+
+2. **Data Ingestion**:
+   - Navigate to `Settings > Add Data > Monitor > Local Event Log Collection`.
+   - Select `WinEventLog:Security` to start collecting security-related events.
+
+3. **Advanced Search Queries**:
+   - Use the following queries to detect suspicious activities:
+
+     ```spl
+     # Query 1: Failed Login Attempts
+     index=main source="WinEventLog:Security"
+     | stats count by Account_Name, ComputerName
+     | sort - count
+     | where count > 5
+     ```
+
+     ```spl
+     # Query 2: Privilege Escalation Detection
+     index=main source="WinEventLog:Security" EventCode=4672
+     | stats count by Account_Name, ComputerName
+     | where count > 1
+     ```
+     index=main source="WinEventLog:Security"
+    | transaction Account_Name startswith="EventCode=4624" endswith="EventCode=4647" maxspan=1h
+    | stats count by Account_Name
+    | where count > 10
+
+
+4. **Dashboards**:
+   - Create custom panels to track failed logins, unusual account activity, and privileged user actions.
+
+5. **Reporting and Alerts**:
+   - Set up scheduled searches and alerts based on critical events such as multiple failed logins or unauthorized access attempts.
+
+## Usage
+
+- Access the dashboards through Splunk Web at `http://localhost:8000`.
+- Customize the queries and dashboard panels to suit your specific environment and monitoring needs.
+- Use the alerts and reports to keep track of security incidents in real-time.
+
+## Contributing
+
+Feel free to fork this project, submit issues, and contribute with improvements or additional features.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
