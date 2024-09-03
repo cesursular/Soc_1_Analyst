@@ -1,0 +1,117 @@
+# Cybersecurity Home Lab Setup
+
+## Overview
+
+This project demonstrates the setup of a professional cybersecurity home lab environment using Kali Linux, Windows Server, Windows 10, and Metasploitable. This lab allows for practical experimentation with penetration testing, vulnerability assessments, and threat detection using Splunk, making it an excellent showcase for cybersecurity skills.
+
+## Objectives
+
+- Set up a realistic cybersecurity lab environment with multiple virtual machines.
+- Use Kali Linux for penetration testing and ethical hacking practices.
+- Configure Windows Server to manage a domain, DNS, and secure the environment.
+- Deploy Windows 10 as a domain-joined client for endpoint security testing.
+- Use Metasploitable as a deliberately vulnerable machine for exploit testing.
+- Visualize security events through custom Splunk dashboards for real-time monitoring.
+
+## Lab Components
+
+- **Kali Linux**: The primary attack machine loaded with tools like Metasploit, Nmap, and Wireshark.
+- **Windows Server**: Configured as a domain controller with Active Directory and DNS.
+- **Windows 10**: A client machine for testing endpoint security within a domain environment.
+- **Metasploitable**: A vulnerable machine used for testing exploits and attacks.
+
+## Setup Guide
+
+### 1. Environment Preparation
+
+#### VMware Workstation Installation
+1. Download and install VMware Workstation Pro or VirtualBox from their official websites.
+2. Enable **VT-x** or **AMD-V** in the BIOS to support virtualization.
+
+### 2. Kali Linux Setup
+
+#### Step-by-Step Configuration
+1. **Create a VM** in VMware or VirtualBox:
+   - Name: **Kali Linux**
+   - Type: **Linux, Debian 64-bit**
+   - Resources: 4 GB RAM, 2 CPUs, 40 GB disk space.
+2. **Install Kali Linux** using the downloaded ISO file:
+   - Use the default guided partitioning settings during installation.
+   - Set a strong root password during setup.
+
+#### Post-Installation Commands
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install open-vm-tools-desktop -y  # Installs VMware tools for improved performance
+
+3. Windows Server Setup
+PowerShell Commands for Setup
+
+    Install Active Directory:
+
+----powershell
+
+Install-WindowsFeature -Name AD-Domain-Services
+Install-ADDSForest -DomainName "lab.local"
+
+Create Domain Users and Groups:
+
+----powershell
+
+    New-ADUser -Name "TestUser" -AccountPassword (ConvertTo-SecureString "Password123!" -AsPlainText -Force) -Enabled $true
+    Add-ADGroupMember -Identity "Domain Admins" -Members "TestUser"
+
+4. Windows 10 Setup
+Join Windows 10 to Domain
+
+    Create a VM in VMware or VirtualBox:
+        Name: Windows 10
+        Resources: 4 GB RAM, 1 CPU, 40 GB disk space.
+    Install Windows 10 from the ISO and configure network settings to match the server’s domain.
+
+----powershell
+
+    Add-Computer -DomainName "lab.local" -Credential (Get-Credential)
+    Restart-Computer
+
+5. Metasploitable Setup
+
+    Import Metasploitable VM into VMware:
+        Configure the VM to run in an isolated network environment to avoid exposing vulnerabilities.
+    Test Connectivity with Kali Linux to ensure it is reachable.
+
+6. Splunk Dashboards
+Setting Up Splunk Dashboards
+
+    Create Splunk Dashboards to visualize security events.
+    Use Advanced Queries for specific event monitoring:
+
+    spl
+
+    index=main source="WinEventLog:Security" EventCode=4625
+    | stats count by Account_Name, ComputerName, IpAddress
+    | sort - count
+
+7. Advanced Testing Scenarios
+Penetration Testing with Metasploit
+
+----bash
+  
+    msfconsole
+    use exploit/unix/ftp/vsftpd_234_backdoor
+    set RHOST <Metasploitable_IP>
+    exploit
+
+Hardening Windows Server
+
+----powershell
+
+    # Disable SMBv1 to enhance security
+    Set-SmbServerConfiguration -EnableSMB1Protocol $false
+
+
+Feel free to contribute by forking this repository, submitting issues, or suggesting improvements through pull requests.
+
+This project is licensed under the MIT License - see the LICENSE file for more details.
+
+This README is designed to be comprehensive and professional, showcasing your advanced skills in cybers
