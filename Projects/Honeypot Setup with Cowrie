@@ -1,0 +1,76 @@
+Project Description
+
+This project demonstrates step-by-step how to set up a Honeypot using Cowrie, an SSH and Telnet Honeypot designed to capture and log malicious activities. The purpose is to analyze attackers' behaviors in a controlled environment.
+Requirements
+
+    Virtual Machine (VM) with Linux (preferably Ubuntu 20.04 or Kali Linux)
+    Python 3 and Git installed
+    Internet connection
+
+Step 1: System Updates and Installation of Dependencies
+
+sudo apt-get update
+sudo apt-get install git python3-virtualenv
+
+Step 2: Installation of Cowrie Honeypot
+
+git clone https://github.com/cowrie/cowrie.git
+cd cowrie
+virtualenv cowrie-env
+source cowrie-env/bin/activate
+pip install -r requirements.txt
+
+Step 3: Configuring Cowrie
+
+Edit the configuration file to adjust how Cowrie operates:
+
+
+nano etc/cowrie.cfg
+
+Change SSH Port: Set the port to 22 to make the Honeypot appear more realistic.
+
+[ssh]
+listen_endpoints = tcp:22:interface=0.0.0.0
+
+Log File Location: Define where the logs will be stored:
+
+
+    [output_jsonlog]
+    enabled = true
+    logfile = /var/log/cowrie/cowrie.json
+
+Step 4: Starting Cowrie
+
+bin/cowrie stop
+bin/cowrie start
+
+Step 5: Testing the Honeypot
+
+Find the IP address of the machine where the Honeypot is installed:
+
+ifconfig
+
+Use the IP address to connect via SSH from another device to test the Honeypot:
+
+ssh user@<honeypot_ip_address>
+
+Step 6: Monitoring and Analyzing Logs
+
+To watch the logs live:
+
+tail -f log/cowrie.log
+
+Step 7: Attack Analysis and Reporting
+
+    Analyze the logs to identify attack methods (e.g., brute force attempts).
+    Document your findings in a report and share it along with the project documentation on your GitHub.
+
+Project Outputs
+
+    Step-by-step setup and configuration of Cowrie Honeypot
+    Logs of captured attacks and analysis reports
+    Project documentation and reports shared on GitHub
+
+Extra: SIEM Integration
+
+For more comprehensive analysis, integrate Honeypot logs with a SIEM platform like Splunk or QRadar.
