@@ -1,0 +1,92 @@
+import re
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from datetime import datetime
+import win32evtlog
+import os
+
+# Email set-up
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_FROM = 'your_email@gmail.com'
+EMAIL_TO = 'recipient_email@example.com'
+EMAIL_SUBJECT = 'Windows log analysis'
+EMAIL_PASSWORD = 'your_app_specific_password'
+
+def read_event_logs():
+    server = 'localhost'
+    log_type = 'Security'
+    hand = win32evtlog.OpenEventLog(server, log_type)
+    flags = win32evtlog.EVENTLOG_BACKWARDS_READ | win32evtlog.EVENTLOG_SEQUENTIAL_READ
+    suspicious_entries = []
+
+    events = win32evtlog.ReadEventLog(hand, flags, 0)
+    for event in events:
+        if event.EventID == 4625:
+            suspicious_entries.append(event)
+
+    win32evtlog.CloseEventLog(hand)
+    return suspicious_entries
+
+def analyze_entries(entries):
+    detailed_report = []
+    for entry in entries:
+        timestamp = entry.TimeGenerated.Format()
+        event_id = entry.EventID
+        string_inserts = "\n".join(entry.StringInserts)
+
+        detailed_report.append(
+            f"[{timestamp}] Event ID: {event_id}\nDetaylar:\n{string_inserts}\n{'-'*40}"
+        )
+
+    return detailed_report
+
+def save_report_to_file(report):
+    desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
+    file_path = os.path.join(desktop_path, "suspicious_log_report.txt")
+
+    try:
+        with open(file_path, 'w', encoding='utf-8') as file:
+            for line in report:
+                file.write(line + "\n")
+        print(f"report saved successfully: {file_path}")
+    except Exception as e:
+        print(f"report didnt saved: {e}")
+
+def send_email(report):
+    msg = MIMEMultipart()
+    msg['From'] = EMAIL_FROM
+    msg['To'] = EMAIL_TO
+    msg['Subject'] = EMAIL_SUBJECT
+
+    body = "\n".join(report)
+    msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        print("SMTP server connecting...")
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        server.starttls()
+        server.login(EMAIL_FROM, EMAIL_PASSWORD)
+        server.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
+        server.quit()
+        print("email sent.")
+    except Exception as e:
+        print(f"email not sent: {e}")
+
+def main():
+    print("windows log analysis started...")
+    suspicious_entries = read_event_logs()
+    
+    if suspicious_entries:
+        print(f"{len(suspicious_entries)} suspicious attempt recognized.")
+        detailed_report = analyze_entries(suspicious_entries)
+    else:
+        print("suspicious attempt not recognized.")
+        detailed_report = ["suspicious attempt didnt recognized."]
+
+    send_email(detailed_report)
+    save_report_to_file(detailed_report)
+
+if __name__ == "__main__":
+    main()
