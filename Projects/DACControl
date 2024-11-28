@@ -1,0 +1,142 @@
+# **Linux Discretionary Access Control (DAC) Model Demonstration**
+
+This project demonstrates how to apply the **Discretionary Access Control (DAC)** model in a Linux environment. We assign and manage individual permissions for a file using standard Unix permissions and Access Control Lists (ACLs). The setup involves multiple users and controlled file access.
+
+---
+
+## **Project Structure**
+- **`/home/kali/Desktop/dac/`**: Project directory containing a sample file.
+- **`dac.txt`**: File used to demonstrate DAC permissions.
+
+---
+
+## **Steps to Reproduce**
+
+### **1. Create the Project Directory and File**
+1. Navigate to the Desktop:
+   ```bash
+   cd ~/Desktop
+Create a directory and a file:
+
+mkdir dac
+cd dac
+touch dac.txt
+
+Verify file permissions:
+
+ls -l dac.txt
+
+Expected output:
+
+    -rw-rw-r-- 1 kali kali 0 <date> dac.txt
+
+2. Create Additional Users
+
+    Create two new users:
+
+sudo adduser user1
+sudo adduser user2
+
+Confirm the users were added:
+
+cat /etc/passwd | grep user
+
+Expected output:
+
+    user1:x:1001:1001:,,,:/home/user1:/bin/bash
+    user2:x:1002:1002:,,,:/home/user2:/bin/bash
+
+3. Set File Permissions Using ACL
+
+    Assign read-only permissions to user1 and user2 for dac.txt:
+
+sudo setfacl -m u:user1:r dac.txt
+sudo setfacl -m u:user2:r dac.txt
+
+Verify ACL settings:
+
+getfacl dac.txt
+
+Expected output:
+
+    # file: dac.txt
+    # owner: kali
+    # group: kali
+    user::rw-
+    user:user1:r--
+    user:user2:r--
+    group::rw-
+    mask::rw-
+    other::r--
+
+4. Adjust Directory Permissions
+
+To ensure users can access the directory containing the file:
+
+    Add execute permissions to /home:
+
+sudo chmod o+x /home
+
+Add execute permissions to /home/kali:
+
+sudo chmod o+x /home/kali
+
+Verify directory permissions:
+
+ls -ld /home
+ls -ld /home/kali
+
+Expected output:
+
+drwxr-xr-x 5 root root 4096 <date> /home
+drwx-----x 17 kali kali 4096 <date> /home/kali
+
+Add read and execute permissions for user1 to the dac directory:
+
+sudo setfacl -m u:user1:rx /home/kali/Desktop/dac
+
+Verify ACL settings for the directory:
+
+getfacl /home/kali/Desktop/dac
+
+Expected output:
+
+    # file: dac
+    # owner: kali
+    # group: kali
+    user::rwx
+    user:user1:r-x
+    group::rwx
+    mask::rwx
+    other::r-x
+
+5. Test Permissions
+
+    Log in as user1:
+
+su - user1
+
+Navigate to the directory and verify access:
+
+    cd /home/kali/Desktop/dac
+    cat dac.txt
+
+    Expected behavior:
+        user1 can read the file.
+        user1 cannot write to the file.
+
+Notes
+
+    This project demonstrates the Discretionary Access Control (DAC) model.
+    File permissions are managed dynamically using Access Control Lists (ACLs).
+    Directory permissions are adjusted to allow controlled access while maintaining security.
+
+License
+
+This project is licensed under the MIT License. See LICENSE for details.
+Contributing
+
+Feel free to submit issues or create pull requests for further improvements to this project.
+Contact
+
+For any questions or suggestions, please contact at sular.cesur@gmail.com
