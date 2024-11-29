@@ -1,0 +1,99 @@
+# Off-site Backups Project
+
+This project demonstrates how to implement off-site backups to protect data against disasters, hardware failures, and cyberattacks. It covers practical methods using tools like `rsync`, `rclone`, and `AWS CLI`.
+
+---
+
+## **1. What is Off-site Backup?**
+
+Off-site backups involve storing your data in a physically separate location to safeguard against local disasters or hardware failures. This is a key part of disaster recovery strategies.
+
+---
+
+## **2. Why Off-site Backups?**
+
+- **Natural Disasters:** Earthquakes, floods, or fires can destroy local data.
+- **Cyberattacks:** Ransomware attacks can compromise on-site backups.
+- **Hardware Failures:** Protect against local drive or server failures.
+
+---
+
+## **3. Backup Methods**
+
+### **A. Rsync (Local and Remote Backups)**
+
+#### **Local Backup**
+1. Create a sample directory:
+   ```bash
+   mkdir -p ~/backup_test
+   echo "This is a test file" > ~/backup_test/file1.txt
+
+    Backup the directory locally:
+
+    rsync -av ~/backup_test/ ~/backup_destination/
+
+        -a: Archive mode to preserve permissions.
+        -v: Verbose mode for detailed output.
+
+Remote Backup
+
+    Backup to a remote server:
+
+rsync -avz ~/backup_test/ user@remote_server:/path/to/backup/
+
+    -z: Compresses data during transfer.
+
+Automate remote backups with SSH keys:
+
+ssh-keygen -t rsa
+ssh-copy-id user@remote_server
+
+Schedule automated backups using Cron:
+
+crontab -e
+
+Add this line to run the backup daily at 2 AM:
+
+    0 2 * * * rsync -avz ~/backup_test/ user@remote_server:/path/to/backup/
+
+B. Cloud Backup (Google Drive and AWS S3)
+Google Drive Backup with rclone
+
+    Install rclone:
+
+sudo apt install rclone
+
+Configure Google Drive:
+
+rclone config
+
+    Follow the prompts to authenticate your Google account.
+
+Backup files to Google Drive:
+
+    rclone copy ~/backup_test remote_name:/backup_folder/
+
+AWS S3 Backup with AWS CLI
+
+    Install AWS CLI:
+
+sudo apt install awscli
+
+Configure AWS CLI:
+
+aws configure
+
+Enter your AWS credentials and region.
+
+Sync files to an S3 bucket:
+
+    aws s3 sync ~/backup_test s3://your-bucket-name/backup_folder/
+
+4. Best Practices
+3-2-1 Backup Rule
+
+    3 Copies: Maintain 3 copies of your data.
+    2 Locations: Store backups in 2 different locations (e.g., local and cloud).
+    1 Off-site: Ensure at least 1 backup is stored off-site.
+
+owned by sular.cesur@gmail.com
