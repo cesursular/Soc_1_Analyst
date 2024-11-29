@@ -1,0 +1,94 @@
+# Encryption Project
+
+This project demonstrates how to encrypt and decrypt files using OpenSSL. It covers both symmetric encryption (AES) and asymmetric encryption (RSA), as well as hashing techniques for data verification.
+
+---
+
+## **1. What is Encryption?**
+
+Encryption is a process that protects data by transforming it into an unreadable format for unauthorized users. Decryption restores the data to its original form using a specific key.
+
+### **Types of Encryption**
+1. **Symmetric Encryption**: A single key is used for both encryption and decryption (e.g., AES).
+2. **Asymmetric Encryption**: Uses a public-private key pair (e.g., RSA).
+3. **Hashing**: One-way transformation of data for integrity verification (e.g., SHA-256).
+
+---
+
+## **2. Symmetric Encryption (AES)**
+
+### **Encrypting a File**
+1. Create a plaintext file:
+   ```bash
+   echo "This is a secret message" > secret.txt
+
+    Encrypt the file using AES-256:
+
+    openssl enc -aes-256-cbc -salt -in secret.txt -out secret.txt.enc
+
+        -aes-256-cbc: Specifies AES encryption with a 256-bit key.
+        -salt: Adds randomness to the encryption process for better security.
+
+Decrypting a File
+
+    Decrypt the encrypted file:
+
+openssl enc -aes-256-cbc -d -in secret.txt.enc -out decrypted.txt
+
+    -d: Indicates decryption mode.
+
+Verify the decrypted file:
+
+    cat decrypted.txt
+
+3. Asymmetric Encryption (RSA)
+Creating an RSA Key Pair
+
+    Generate a private key:
+
+openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+
+Derive the public key from the private key:
+
+    openssl rsa -pubout -in private_key.pem -out public_key.pem
+
+Encrypting and Decrypting a File
+
+    Create a message file:
+
+echo "This is a secret message for RSA" > rsa_message.txt
+
+Encrypt the file using the public key:
+
+openssl rsautl -encrypt -inkey public_key.pem -pubin -in rsa_message.txt -out rsa_message.enc
+
+Decrypt the file using the private key:
+
+openssl rsautl -decrypt -inkey private_key.pem -in rsa_message.enc -out rsa_message_decoded.txt
+
+Verify the decrypted file:
+
+    cat rsa_message_decoded.txt
+
+4. Hashing with SHA-256
+Generate a Hash
+
+    Calculate the hash of a file:
+
+sha256sum secret.txt
+
+Example output:
+
+    e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  secret.txt
+
+    Use the hash to verify file integrity by comparing it with the hash of the original file.
+
+5. Additional Notes
+Salt in Encryption
+
+    Salt adds extra randomness to the encryption process.
+    You can disable salt by using the -nosalt flag during encryption:
+
+openssl enc -aes-256-cbc -nosalt -in secret.txt -out secret.txt.enc
+
+owned sular.cesur@gmail.com
