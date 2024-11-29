@@ -1,1 +1,107 @@
+# AppArmor Project
 
+This project demonstrates how to use AppArmor to create security profiles for applications and manage their access securely.
+
+---
+
+## **1. What is AppArmor?**
+AppArmor is a Mandatory Access Control (MAC) mechanism for the Linux kernel. It enhances system security by restricting applications' access through profiles. Compared to SELinux, AppArmor is more user-friendly.
+
+---
+
+## **2. Installing AppArmor**
+
+### **Installing Required Packages**
+To install AppArmor and its utilities:
+```bash
+sudo apt update
+sudo apt install apparmor apparmor-utils -y
+
+Starting and Enabling the Service
+
+    Start the service:
+
+sudo systemctl start apparmor
+
+Enable the service to start on boot:
+
+    sudo systemctl enable apparmor
+
+Checking AppArmor Status
+
+sudo aa-status
+
+3. Creating a Profile
+Example: Creating a Profile for a Script
+
+    Create a new script:
+
+echo "echo 'Hello from AppArmor!'" > ~/example_script.sh
+chmod +x ~/example_script.sh
+
+Generate a profile for the script:
+
+sudo aa-genprof ~/example_script.sh
+
+Interactive Process:
+
+    Run the application when prompted:
+
+        ~/example_script.sh
+
+        Allow or deny access based on system log events during the profile setup.
+
+    Complete the profile setup:
+        Choose "Scan system log" to analyze logs for required permissions.
+        Choose "Finish" to save the profile.
+
+4. Testing the Profile
+Check Loaded Profiles
+
+sudo aa-status
+
+Test the Profile
+
+Run the script to verify that the profile works as expected:
+
+~/example_script.sh
+
+5. Editing the Profile
+
+    Edit the profile file:
+
+sudo nano /etc/apparmor.d/home.kali.example_script.sh
+
+After making changes, reload the profile:
+
+    sudo apparmor_parser -r /etc/apparmor.d/home.kali.example_script.sh
+
+6. AppArmor Modes
+Complain Mode:
+
+To run the profile in complain mode (logging violations without enforcement):
+
+sudo aa-complain /etc/apparmor.d/home.kali.example_script.sh
+
+Enforce Mode:
+
+To enforce the profile (actively restrict violations):
+
+sudo aa-enforce /etc/apparmor.d/home.kali.example_script.sh
+
+7. Reviewing Logs
+
+To check AppArmor logs for violations:
+
+sudo dmesg | grep apparmor
+
+If using rsyslog:
+
+sudo tail -f /var/log/syslog | grep apparmor
+
+owned sular.cesur@gmail.com
+8. Creating Additional Profiles
+
+To create a profile for another application:
+
+sudo aa-genprof /path/to/application
